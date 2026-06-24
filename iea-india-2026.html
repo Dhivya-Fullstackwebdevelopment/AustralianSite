@@ -2327,7 +2327,83 @@
       }
 
       .nav-menu {
-        display: none
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 30px 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        gap: 20px;
+        border-top: 1px solid var(--border);
+        z-index: 99;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        font-size: 18px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f2f5;
+        width: 100%;
+      }
+
+      .nav-menu a:last-child {
+        border-bottom: none;
+      }
+
+      .nav-menu a.active::after {
+        display: none;
+      }
+
+      .nav-actions .btn-gold {
+        display: none;
+      }
+
+      .nav-actions .nav-phone {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 8px 4px;
+        transition: all 0.3s ease;
+        background: transparent;
+        border: none;
+        outline: none;
+        z-index: 101;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 28px;
+        height: 2.5px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
       }
 
       .svc-grid-2,
@@ -2353,6 +2429,85 @@
 
       .cta-banner {
         grid-template-columns: 1fr
+      }
+
+      .why-left,
+      .why-right {
+        padding: 40px 24px;
+      }
+
+      .svc-left-panel {
+        padding: 40px 24px;
+      }
+
+      .svc-right-panel {
+        padding: 24px;
+      }
+
+      .hero-h1 {
+        font-size: 36px;
+      }
+
+      .sec-h2 {
+        font-size: 28px;
+      }
+
+      .sec-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .courses-h2 {
+        font-size: 28px;
+      }
+
+      .cta-h2 {
+        font-size: 30px;
+      }
+
+      .cta-actions {
+        width: 100%;
+      }
+
+      .cta-btn1,
+      .cta-btn2 {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-trust {
+        gap: 16px;
+      }
+
+      .ht {
+        flex: 1;
+        min-width: 120px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cta-book,
+      .cta-elig {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-checks {
+        width: 100%;
+      }
+
+      .hc {
+        font-size: 15px;
+      }
+    }
+
+    /* Desktop: hide hamburger */
+    @media (min-width:761px) {
+      .hamburger {
+        display: none;
       }
     }
 
@@ -2401,9 +2556,8 @@
   <nav class="nav">
     <div class="nav-brand">
       <img src="./assets/imgs/iea-logo-2.png" alt="IE Agents Logo" class="nav-logo">
-
     </div>
-    <div class="nav-menu">
+    <div class="nav-menu" id="navMenu">
       <a href="#" class="active">Study in Australia</a>
       <a href="#">Migration</a>
       <a href="#">Courses</a>
@@ -2415,6 +2569,11 @@
     <div class="nav-actions">
       <div class="nav-phone"><i class="ti ti-phone" style="font-size:14px"></i>+91 89768 02593</div>
       <a href="#" class="btn-gold">Book Free Consultation <i class="ti ti-arrow-right" style="font-size:14px"></i></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -3487,8 +3646,26 @@
   </div>
 
   <script>
-    // Intersection Observer for scroll-triggered animations
+    // Hamburger toggle
     document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked (optional, improves UX)
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // Intersection Observer for scroll-triggered animations
       const animElements = document.querySelectorAll('.anim-section, .anim-item, .anim-left, .anim-right, .anim-scale');
 
       const observer = new IntersectionObserver((entries) => {
