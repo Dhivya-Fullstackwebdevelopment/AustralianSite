@@ -64,6 +64,7 @@
         opacity: 0;
         transform: translateY(40px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -75,6 +76,7 @@
         opacity: 0;
         transform: translateX(-40px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -86,6 +88,7 @@
         opacity: 0;
         transform: translateX(40px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -97,6 +100,7 @@
         opacity: 0;
         transform: scale(0.92);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -108,6 +112,7 @@
         opacity: 0;
         transform: translateY(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -115,20 +120,32 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
     }
 
     .anim-section {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .anim-section.visible {
@@ -140,7 +157,7 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .anim-item.visible {
@@ -148,18 +165,35 @@
       transform: translateY(0);
     }
 
-    .anim-item-delay-1 { transition-delay: 0.1s; }
-    .anim-item-delay-2 { transition-delay: 0.2s; }
-    .anim-item-delay-3 { transition-delay: 0.3s; }
-    .anim-item-delay-4 { transition-delay: 0.4s; }
-    .anim-item-delay-5 { transition-delay: 0.5s; }
-    .anim-item-delay-6 { transition-delay: 0.6s; }
+    .anim-item-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .anim-item-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .anim-item-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .anim-item-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .anim-item-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    .anim-item-delay-6 {
+      transition-delay: 0.6s;
+    }
 
     .anim-left {
       opacity: 0;
       transform: translateX(-40px);
       transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .anim-left.visible {
@@ -171,7 +205,7 @@
       opacity: 0;
       transform: translateX(40px);
       transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .anim-right.visible {
@@ -183,7 +217,7 @@
       opacity: 0;
       transform: scale(0.92);
       transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .anim-scale.visible {
@@ -198,8 +232,8 @@
     .tc,
     .faq {
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  border-color 0.3s ease;
+        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        border-color 0.3s ease;
     }
 
     .svc2:hover,
@@ -444,9 +478,18 @@
       animation: fadeInUp 0.8s ease forwards;
       opacity: 0;
     }
-    .hero-left>*:nth-child(1) { animation-delay: 0.4s; }
-    .hero-left>*:nth-child(2) { animation-delay: 0.6s; }
-    .hero-left>*:nth-child(3) { animation-delay: 0.8s; }
+
+    .hero-left>*:nth-child(1) {
+      animation-delay: 0.4s;
+    }
+
+    .hero-left>*:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .hero-left>*:nth-child(3) {
+      animation-delay: 0.8s;
+    }
 
     .hero-right {
       position: relative;
@@ -484,8 +527,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .4; transform: scale(0.8); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(0.8);
+      }
     }
 
     .hero-badge span {
@@ -1605,6 +1657,7 @@
       background: var(--gold);
       transform: scale(1.08);
     }
+
     .wp:hover .wp-check i {
       color: #fff !important;
     }
@@ -1722,10 +1775,22 @@
       font-size: 15px;
       animation: pulse 2s infinite;
     }
-    .tc-star:nth-child(2) { animation-delay: 0.2s; }
-    .tc-star:nth-child(3) { animation-delay: 0.4s; }
-    .tc-star:nth-child(4) { animation-delay: 0.6s; }
-    .tc-star:nth-child(5) { animation-delay: 0.8s; }
+
+    .tc-star:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .tc-star:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .tc-star:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .tc-star:nth-child(5) {
+      animation-delay: 0.8s;
+    }
 
     .tc-quote {
       font-size: 44px;
@@ -2167,8 +2232,13 @@
       animation: float 3s ease-in-out infinite;
     }
 
-    .flt:nth-child(2) { animation-delay: 0.5s; }
-    .flt:nth-child(3) { animation-delay: 1s; }
+    .flt:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .flt:nth-child(3) {
+      animation-delay: 1s;
+    }
 
     .flt:hover {
       transform: scale(1.12);
@@ -2528,7 +2598,14 @@
             <div class="ht-lbl">Visa Success</div>
           </div>
         </div>
-       
+        <div class="ht">
+          <div class="ht-box"><i class="ti ti-award" style="font-size:24px;color:var(--gold)"></i></div>
+          <div>
+            <div class="ht-num">18+</div>
+            <div class="ht-lbl">Years Experience</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2640,49 +2717,13 @@
             <div class="hpc-badge"><i class="ti ti-circle-check" style="font-size:12px"></i> Free Consultation Available
             </div>
           </div>
+
+
         </div>
 
       </div>
     </div>
   </section>
-
-  <div class="trust-bar anim-section">
-    <div class="tbs anim-item anim-item-delay-1">
-      <div class="tbs-icon"><i class="ti ti-certificate" style="font-size:24px;color:var(--gold)"></i></div>
-      <div>
-        <div class="tbs-num">MARA</div>
-        <div class="tbs-lbl">Registered Agents</div>
-      </div>
-    </div>
-    <div class="tbs anim-item anim-item-delay-2">
-      <div class="tbs-icon"><i class="ti ti-building" style="font-size:24px;color:var(--gold)"></i></div>
-      <div>
-        <div class="tbs-num">200+</div>
-        <div class="tbs-lbl">Partner Universities</div>
-      </div>
-    </div>
-    <div class="tbs anim-item anim-item-delay-3">
-      <div class="tbs-icon"><i class="ti ti-star" style="font-size:24px;color:var(--gold)"></i></div>
-      <div>
-        <div class="tbs-num">4.9/5</div>
-        <div class="tbs-lbl">Google Reviews</div>
-      </div>
-    </div>
-    <div class="tbs anim-item anim-item-delay-4">
-      <div class="tbs-icon"><i class="ti ti-shield-check" style="font-size:24px;color:var(--gold)"></i></div>
-      <div>
-        <div class="tbs-num">98%</div>
-        <div class="tbs-lbl">Visa Success Rate</div>
-      </div>
-    </div>
-    <div class="tbs anim-item anim-item-delay-5">
-      <div class="tbs-icon"><i class="ti ti-award" style="font-size:24px;color:var(--gold)"></i></div>
-      <div>
-        <div class="tbs-num">18+</div>
-        <div class="tbs-lbl">Years Experience</div>
-      </div>
-    </div>
-  </div>
 
   <div class="svc-section-wrap anim-section">
     <div class="svc-left-panel anim-left">
@@ -3447,7 +3488,7 @@
 
   <script>
     // Intersection Observer for scroll-triggered animations
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const animElements = document.querySelectorAll('.anim-section, .anim-item, .anim-left, .anim-right, .anim-scale');
 
       const observer = new IntersectionObserver((entries) => {
