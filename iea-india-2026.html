@@ -301,7 +301,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
+      padding: 60px;
       height: 80px;
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -365,7 +365,7 @@
 
     .nav-menu {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       align-items: center
     }
 
@@ -1095,7 +1095,7 @@
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 26px 22px;
+      padding: 26px 15px;
       cursor: pointer;
       transition: all .22s, transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
@@ -1161,7 +1161,7 @@
     }
 
     .svc2:hover .svc2-icon i {
-      color: #fff !important
+      color: #fff !important;
     }
 
     .svc2-arrow {
@@ -1179,7 +1179,7 @@
     .svc2:hover .svc2-arrow {
       background: var(--gold);
       border-color: var(--gold);
-      color: #fff;
+      color: #fff !important;
       transform: rotate(45deg);
     }
 
@@ -2532,6 +2532,110 @@
       font-size: 12px;
       color: #666;
     }
+
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-icon {
+      transition: 0.3s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Fix horizontal scroll on mobile */
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    * {
+      max-width: 100%;
+    }
+
+    .hero,
+    .section,
+    .nav,
+    .topbar,
+    .footer,
+    .hero-right,
+    .hero-left,
+    .hero-person-wrap,
+    .float-bar {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    @media (max-width:760px) {
+
+      .hero,
+      .section,
+      .courses-section,
+      .footer,
+      .topbar,
+      .nav {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      .hero-right {
+        padding: 20px !important;
+      }
+
+      .hero-person-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .nav-logo {
+        width: 140px !important;
+        height: auto !important;
+      }
+
+      .float-bar {
+        right: 10px !important;
+      }
+    }
   </style>
 </head>
 
@@ -3477,34 +3581,86 @@
         <div class="sec-eyebrow">Frequently Asked Questions</div>
         <h2 class="sec-h2">Everything You Need to Know</h2>
       </div>
-      <a href="#" class="sec-link">View All FAQs <i class="ti ti-arrow-right" style="font-size:14px"></i></a>
     </div>
-    <div class="faq-grid">
-      <div class="faq anim-item anim-item-delay-1">
-        <div class="faq-q">How long does visa processing take?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
+
+    <section class="section section-alt anim-section">
+      <div class="sec-header">
+        <div>
+          <div class="sec-eyebrow">Frequently Asked Questions</div>
+          <h2 class="sec-h2">Everything You Need to Know</h2>
+        </div>
       </div>
-      <div class="faq anim-item anim-item-delay-2">
-        <div class="faq-q">Can I work while studying in Australia?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does the Australian student visa process take?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Most student visa applications are processed within 4–8 weeks, depending on your course, documentation,
+              and immigration requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the IELTS requirements for Australia?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Most universities require an IELTS score between 6.0 and 7.0, depending on the course and institution.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I work while studying in Australia?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. International students can work part-time during study periods and full-time during scheduled
+              breaks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you assist with visa applications?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Our registered migration experts guide you through document preparation, submission, and visa
+              processing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are the tuition fees for studying in Australia?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Tuition fees vary by university and course, typically ranging from AUD 20,000 to AUD 45,000 per year.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I stay in Australia after completing my studies?
+            <span class="faq-icon"><i class="ti ti-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Eligible graduates can apply for post-study work visas, allowing them to gain valuable work
+              experience in Australia.</p>
+          </div>
+        </div>
+
+
       </div>
-      <div class="faq anim-item anim-item-delay-3">
-        <div class="faq-q">Which courses lead to PR in Australia?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
-      </div>
-      <div class="faq anim-item anim-item-delay-4">
-        <div class="faq-q">What are the costs involved?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
-      </div>
-      <div class="faq anim-item anim-item-delay-5">
-        <div class="faq-q">What is the minimum IELTS score required?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
-      </div>
-      <div class="faq anim-item anim-item-delay-6">
-        <div class="faq-q">Do you provide support after arrival?</div>
-        <div class="faq-plus"><i class="ti ti-plus" style="font-size:14px;color:#7a90b0"></i></div>
-      </div>
-    </div>
+    </section>
+
   </section>
 
   <div class="cta-banner anim-section">
@@ -3680,6 +3836,22 @@
       });
 
       animElements.forEach(el => observer.observe(el));
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+
+        item.classList.toggle('active');
+
+        if (item.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          answer.style.maxHeight = null;
+        }
+      });
     });
   </script>
 </body>
